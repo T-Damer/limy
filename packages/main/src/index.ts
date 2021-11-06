@@ -43,7 +43,8 @@ const createWindow = async () => {
       preload: join(__dirname, '../../preload/dist/index.cjs'),
       contextIsolation: env.MODE !== 'test', // Spectron tests can't work with contextIsolation: true
       enableRemoteModule: env.MODE === 'test' // Spectron tests can't work with enableRemoteModule: false
-    }
+    },
+    autoHideMenuBar: true
   })
 
   /**
@@ -73,7 +74,6 @@ const createWindow = async () => {
       : new URL('../renderer/dist/index.html', 'file://' + __dirname).toString()
 
   await mainWindow.loadURL(pageUrl)
-  mainWindow.removeMenu()
 }
 
 app.on('second-instance', () => {
