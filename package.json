@@ -27,7 +27,7 @@
     "compile": "electron-builder build --config electron-builder.config.js --dir --config.asar=false",
     "pretest": "cross-env MODE=test npm run build",
     "test": "node tests/app.spec.js",
-    "watch": "node scripts/watch.js",
+    "develop": "node scripts/watch.js",
     "lint": "eslint . --ext js,ts",
     "pretypecheck": "npm run buildEnvTypes",
     "typecheck-main": "tsc --noEmit -p packages/main/tsconfig.json",
